@@ -5,10 +5,10 @@ var pages = [
         verify: function(data) { return false; }
     },
     {
-        verify: function(data) { return data.expr == "(+ 3 3)"; }
+        verify: function(data) { return data.expr == "start n=node(0) return n"; }
     },
     {
-        verify: function(data) { return data.expr == "(/ 10 3)"; }
+        verify: function(data) { return data.expr == "START n=node(1,2) return n.name"; }
     },
     {
         verify: function(data) { return data.expr == "(/ 10 3.0)"; }
@@ -66,7 +66,7 @@ function getStep(n, controller) {
     $("#tuttext").load("tutorial", { step: n }, function() { setupExamples(controller); });
 }
 
-function eval_clojure(code) {
+function eval_cypher(code) {
     var data;
     $.ajax({
         url: "eval.json",
@@ -131,7 +131,7 @@ function onHandle(line, report) {
     if (doCommand(input, report)) return;
 
     // perform evaluation
-    var data = eval_clojure(input);
+    var data = eval_cypher(input);
 
     // handle error
     if (data.error) {
@@ -166,8 +166,8 @@ var controller;
 
 $(document).ready(function() {
     controller = $("#console").console({
-        welcomeMessage:'Enter some Clojure code to be evaluated.',
-        promptLabel: 'Clojure> ',
+        welcomeMessage:'Enter some Cypher statement to be executed.',
+        promptLabel: 'Cypher> ',
         commandValidate: onValidate,
         commandHandle: onHandle,
         autofocus:true,

@@ -1,4 +1,4 @@
-(ns tryclojure.views.tutorial
+(ns trycypher.views.tutorial
   (:require [noir.core :refer [defpage]]))
 
 (defpage [:post "/tutorial"] {n :n}

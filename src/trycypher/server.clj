@@ -1,9 +1,15 @@
-(ns tryclojure.server
+(ns trycypher.server
   (:require [noir.server :as server]
-            [ring.middleware.file :refer [wrap-file]]))
+            [ring.middleware.file :refer [wrap-file]]
+            [clojurewerkz.neocons.rest :as nr]
+))
+
+(def neo4j-url (or (System/getenv "NEO4J_REST_URL") "http://localhost:7474/db/data/"))
+
+(nr/connect! neo4j-url)
 
 (server/add-middleware wrap-file (System/getProperty "user.dir"))
-(server/load-views "src/tryclojure/views")
+(server/load-views "src/trycypher/views")
 
 (defn to-port [s]
   (when-let [port s] (Long. port)))

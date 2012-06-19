@@ -20,7 +20,7 @@ body {
 #header h1 {
  height: 72px;
  line-height: 72px;
- background: url(/resources/public/clojure-logo.png) no-repeat;
+ background: url(/resources/public/logo_neo4j.png) no-repeat;
  margin: 0;
  padding: 0;
  padding-left: 75px;
@@ -58,6 +58,7 @@ body {
 #console div.jquery-console-message-value {
   color:#0066FF; 
   font-family:monospace;
+  white-space: pre;
   padding:0.1em; 
 }
 #console div.jquery-console-prompt-box {
