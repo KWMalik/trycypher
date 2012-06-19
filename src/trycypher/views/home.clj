@@ -8,24 +8,25 @@
    [(link-to "http://neo4j.org" "The official Neo4j website")
     (link-to "http://groups.google.com/group/neo4j" "Neo4j mailing list")
     (link-to "http://www.manning.com/partner/" "The Neo4j in Action book by Jonas Partner and Aleksa Vukotic")
-	]))
+    ]))
 
 (defpartial about-html []
   [:p.bottom
-   "Please note that this console is working against a live remote database. 
+   "Please note that this console is working against a live remote database. "
    "Keep in mind that this site is designed for "
    "beginners to try out Cypher and not necessarily as a general-purpose server-side console."]
   [:p.bottom
    "You can find the site's source and such on its "
-   (link-to "http://github.com/jexp/tryneo" "github")
+   (link-to "http://github.com/jexp/trycypher" "github")
    " page."]
   [:p.bottom
    "TryClojure is written in Clojure and JavaScript (JQuery), powered by "
    (link-to "https://github.com/michaelklishin/neocons" "neocons")
    " and Chris Done's "
    (link-to "https://github.com/chrisdone/jquery-console" "jquery-console")
-   " it builds upon the tryclojure console and replaced the clojure evaluation by cypher execution"
-   (link-to "http://github.com/Raynes/tryclojure" "jquery-console")
+   " it builds upon the " 
+    (link-to "http://github.com/Raynes/tryclojure" "TryClojure console")
+    " and replaced the clojure evaluation by cypher execution"
    ]
   [:p.bottom "Design by " (link-to "http://apgwoz.com" "Andrew Gwozdziewycz")])
 
