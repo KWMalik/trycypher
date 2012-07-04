@@ -12,9 +12,9 @@
 )
 
 (defn cypher-convert-cell [[col value]] 
-    [col (cypher-convert-value value)])
+    [col (render (cypher-convert-value value))])
 
-(defn cypher-convert-row [row] (map cypher-convert-value row))
+(defn cypher-convert-row [row] (map #(render (cypher-convert-value %)) row))
 
 (defn cypher-convert-result [row] (map cypher-convert-cell row))
 
@@ -22,6 +22,11 @@
     ([row sep nl] (str (apply str (map #(format "%10s%s" % sep) row)) nl))
     ([row] (pad row "|" "\n"))
 )
+
+(defn render [value]
+   (if (coll? value) (doall (flatten (seq value))) value)
+)
+
 
 (defn result-to-table [{data :data columns :columns}]
     (str (pad columns) (apply str (map pad (map cypher-convert-row data)))))

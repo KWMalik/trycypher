@@ -1,16 +1,17 @@
-# trycypher
+# Try Cypher
 
-TryClojure is a online Clojure REPL written using Noir and Chris Done's jquery console (you're awesome, Chris).
+TryCypher is a online Neo4j Cypher REPL und Tutorial written using TryClojure, Noir and Chris Done's jquery console.
 
 ## Usage
 
-http://tryclj.com
+http://trycypher.heroku.com
 
-If you want to run it, refer to https://github.com/Raynes/trycypher/wiki/Running-Tryclojure
+If you want to run it, refer to https://github.com/Raynes/tryclojure/wiki/Running-Tryclojure
 
 ## Credits
 
 apgwoz: Design
+Raynes: TryClojure
 
 ## License
 
